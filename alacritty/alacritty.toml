@@ -1,0 +1,11 @@
+general.import = ["colors.toml"]
+
+[font]
+normal = { family = "Cascadia Code" }
+size = 13
+
+[window]
+opacity = 0.8
+blur = true
+decorations = "full"  # "full", "none", "transparent", "buttonless"
+startup_mode = "Windowed"  # "Windowed", "Maximized", "Fullscreen"
