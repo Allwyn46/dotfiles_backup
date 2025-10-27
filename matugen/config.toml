@@ -1,0 +1,56 @@
+[config.wallpaper]
+# Whether to set the wallpaper or not
+set = false
+
+# The base command to run for applying the wallpaper, shouldn't have spaces in it.
+command = "swww"
+
+# The arguments that will be provided to the command.
+# Keywords like {{ mode }} or anything that works inside of hooks doesn't work here.
+# The last argument will be the image path.
+arguments = ["img", "--transition-type", "center"]
+
+[templates.hyprland]
+input_path = '/home/allwyn/.config/matugen/templates/hyprland-colors.conf'
+output_path = '/home/allwyn/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '/home/allwyn/.config/matugen/templates/kitty-colors.conf'
+output_path = '/home/allwyn/.config/kitty/colors.conf'
+post_hook = 'kill -SIGUSR1 $(pgrep kitty)'
+
+[templates.alacritty]
+input_path = '/home/allwyn/.config/matugen/templates/alacritty.toml'
+output_path = '/home/allwyn/.config/alacritty/colors.toml'
+post_hook = 'pkill -USR1 alacritty'
+
+[templates.rofi]
+input_path = '/home/allwyn/.config/matugen/templates/rofi-colors.rasi'
+output_path = '/home/allwyn/.config/rofi/colors.rasi'
+
+[templates.waybar]
+input_path = '/home/allwyn/.config/matugen/templates/colors.css'
+output_path = '/home/allwyn/.config/waybar/colors.css'
+post_hook = 'pkill waybar; waybar & disown'
+
+[templates.swaync]
+input_path = '/home/allwyn/.config/matugen/templates/colors.css'
+output_path = '/home/allwyn/.config/swaync/colors.css'
+post_hook = 'pkill swaync && swaync & disown'
+
+[templates.pywalfox]
+input_path = '/home/allwyn/.config/matugen/templates/pywalfox-colors.json'
+output_path = '/home/allwyn/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.cava]
+input_path = '/home/allwyn/.config/matugen/templates/cava-colors.ini'
+output_path = '/home/allwyn/.config/cava/themes/ghost_theme'
+post_hook = "pkill -USR1 cava"
+
+[templates.wlogout]
+input_path = '/home/allwyn/.config/matugen/templates/colors.css'
+output_path = '/home/allwyn/.config/wlogout/colors.css'
+
+
